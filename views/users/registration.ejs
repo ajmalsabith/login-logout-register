@@ -1,0 +1,136 @@
+<%- include('../layouts/header.ejs') %>
+
+
+    <section class="vh-100" style="background-color: #1e0e42;">
+        <div class="container h-100">
+            <div class="row d-flex justify-content-center align-items-center h-100">
+                <div class="col-lg-12 col-xl-11" >
+                    <div class="card text-black" style="border-radius: 25px; ">
+                        <div class="card-body p-md-5 ">
+                            <div class="row justify-content-center">
+                                <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
+
+                                    <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">Sign up</p>
+
+                                    <form class="mx-1 mx-md-4" method="post" >
+
+                                        <div class="d-flex flex-row align-items-center mb-4">
+                                            <i class="fas fa-user fa-lg me-3 fa-fw"></i>
+                                            <div class="form-outline flex-fill mb-0">
+                                                
+                                                <input type="text" id="name" name="name" required
+                                                    class="form-control"  />
+                                                <label class="form-label" for="form3Example1c"><span id="en1" >name</span></label>
+                                                
+                                            </div>
+                                            
+                                        </div>
+
+                                        <div class="d-flex flex-row align-items-center mb-4">
+                                            <i class="fas fa-envelope fa-lg me-3 fa-fw"></i>
+                                            <div class="form-outline flex-fill mb-0">
+                                                <input type="email" name="email" id="email" required
+                                                    class="form-control" />
+                                                <label class="form-label" for="form3Example3c"><span id="en2" >Email</span></label>
+                                               
+                                            </div>
+                                            
+                                        </div>
+
+                                        <div class="d-flex flex-row align-items-center mb-4">
+                                            <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
+                                            <div class="form-outline flex-fill mb-0">
+                                                <input type="number" name="mobile" required id="mobile"
+                                                    class="form-control" />
+                                                <label class="form-label" for="form3Example4c"> <span id="en3">mobile number</span> </label>
+                                                   
+                                                   
+                                            </div>
+                                           
+                                        </div>
+
+                                        <div class="d-flex flex-row align-items-center mb-4">
+                                            <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
+                                            <div class="form-outline flex-fill mb-0">
+                                                <input type="password" name="password" required id="password"
+                                                    class="form-control" />
+                                                <label class="form-label" for="form3Example4c"> <span id="en4">Password</span></label>
+                                               
+                                            </div>
+                                           
+                                        </div>
+
+                                        <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
+                                            <input type="submit" onclick="validate()" class="btn btn-primary btn-lg" value="REGISTER">
+                                        </div>
+                                        <% if(typeof message !=  "undefined" ){ %>
+
+                                            <span style="color: rgb(29, 207, 79);">
+                                                <%= message %>
+                                            </span>
+                                            <% } %>
+
+                                
+
+                                        
+                                        <p class="mb-5 pb-lg-2" style="color: #393f81;">you have an account? <a
+                                            href="/login" style="color: #393f81;">login here</a>
+                                    </p>
+
+                                    </form>
+
+                                </div>
+                                <div class="col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2">
+
+                                    <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-registration/draw1.webp"
+                                        class="img-fluid" alt="Sample image">
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<script>
+
+   function validate(){
+     
+    name=document.getElementById('name').value
+    email=document.getElementById('email').value
+    mobile=document.getElementById('mobile').value
+    password=document.getElementById('password').value
+
+    if(name==''){
+        document.getElementById('en1').innerText='please must fill name '
+    }
+    else{
+        document.getElementById("en1").innerText="name"
+    }
+    if(email==''){
+        document.getElementById('en2').innerText='please must fill email '
+    }
+    else{
+        document.getElementById("en2").innerText="email"
+    } if(mobile==''){
+        document.getElementById('en3').innerText='please must fill mobile number '
+    }
+    else{
+        document.getElementById("en3").innerText="mobile"
+    } if(password==''){
+        document.getElementById('en4').innerText='please must fill password '
+    }
+    else{
+        document.getElementById("en4").innerText="password"
+    }
+
+   }
+
+</script>   
+
+
+
+
+    <%- include('../layouts/footer.ejs') %>

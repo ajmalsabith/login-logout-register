@@ -1,0 +1,43 @@
+<%- include('../layouts/header.ejs') %>
+
+
+<form method="post" action=""><br>
+
+    <div class="d-flex align-items-center mb-3 pb-1">
+        <i class="fas fa-cubes fa-2x me-3" style="color: #ff6219;"></i>
+        <span class="h1 fw-bold mb-0">user edit</span>
+    </div><br><br>
+
+    <div class="form-outline mb-4">
+        <input type="name" id="form2Example27"
+            class="form-control form-control-lg" name="name" value="<%=users.name%>"
+            placeholder="Enter your Password" />
+
+    </div>
+
+    <div class="form-outline mb-4">
+        <input type="email" name="email" id="form2Example17"
+            class="form-control form-control-lg" placeholder="Enter your Email" value="<%=users.email%>" />
+
+    </div>
+
+    <div class="form-outline mb-4">
+        <input type="mobile" id="form2Example27"
+            class="form-control form-control-lg" value="<%=users.mobile%>" name="mobile"
+            placeholder="Enter your Password" />
+
+    </div>
+
+    <input type="hidden" name="id" value="<%=users._id%>">
+
+    <div class="pt-1 mb-4">
+        <input value="UPDATE" class="btn btn-dark btn-lg btn-block" type="submit">
+    </div>
+
+    <button><a href="/admin/home">RETURN HOME</a></button>
+
+
+
+</form>
+
+<%- include('../layouts/footer.ejs') %>

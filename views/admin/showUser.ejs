@@ -1,0 +1,67 @@
+<%- include('../layouts/header.ejs') %>
+
+<h1>user collections </h1>
+
+
+
+<form action="/admin/user"  class="float-right">
+  <input type="text" name="search" placeholder="Name ">
+<input class="search-btn btn btn-secondary fa"  type="submit" value="search"></input>
+</form>
+
+
+
+
+<div class="mt-5 ">
+    <table class="table table-sm " id="usertable">
+      <thead>
+        <tr>
+         
+          <th scope="col">Name</th>
+          <th scope="col">Email</th>
+          <th scope="col">mobile:</th>
+          
+        </tr>
+      </thead>
+      <tbody>
+     
+         <%
+           if(users.length >0){
+
+            for(let i=0;i<users.length;i++){
+                 %>
+                 <tr>
+                  <td><%= users[i].name %></td>
+                  <td><%= users[i].email %></td>
+                  <td><%= users[i].mobile %></td>
+                  <td><a href="/admin/edit-user?id=<%= users[i]._id %>"><button class="bg-info" >EDIT</button></a></td>
+                  <td><a href="/admin/delete-user?id=<%= users[i]._id %>"><button class="bg-danger" onclick="return confirm('do you want to delete the user <%=users.name %>')" >DELETE</button></a></td>
+                 <%
+            }
+
+             
+           }else{
+
+
+            %>
+            <tr>
+              <td colspan="5">users not found</td>
+            </tr>
+
+            <%
+
+           }
+         %> 
+
+      </tbody>
+    </table>
+
+  </div>
+
+
+<button><a href="/admin/home">RETURN HOME</a></button>
+
+
+
+
+<%- include('../layouts/footer.ejs') %>

@@ -1,0 +1,19 @@
+<%- include('../layouts/header.ejs') %>
+
+    <header>
+        <nav class="navbar navbar-light bg-info ">
+            <a  class="nav-item text-white"><h4>WELCOME ADMIN PAGE</h4></a>
+            <a href="/admin/user" class="nav-item text-dark"><h4>user collections</h4></a>
+            <a href="/admin/new-user" class="nav-item text-dark"><h4>add user </h4></a>
+
+
+            <form class="form-inline">
+                <a href="/admin/logout"><input type="button" class="btn btn-success" value="LOGOUT"></a>
+            </form>
+        </nav>
+
+    </header>
+
+
+
+    <%- include('../layouts/footer.ejs') %>
